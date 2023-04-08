@@ -1,0 +1,150 @@
+main {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.imagen1, .imagen2 {
+	flex-basis: 100%;
+}
+
+.imagen1 {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
+
+.imagen2 {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 53%;
+    margin-top: -29%;
+}
+
+section {
+	position: relative;
+}
+
+h2 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #fff;
+	font-size: 2em;
+	text-shadow: 2px 2px #333;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia;
+  }
+  
+  .iconoInicio{
+    width: 15%;
+    height: 5%;
+  }
+  
+  .bg-light {
+    background-color: #ffffff!important;
+  }
+  
+  .comienzaCambio{
+    font-family: Georgia
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%; 
+    height: 100px;
+  }
+
+/* Estilos para la línea separadora */
+.line {
+	height: 4px;
+	background-color: #e90b0b;
+	transition: height 1.5s, margin 1.5s;
+   /* transform: rotate(90deg);*/
+}
+
+.split {
+	height: 795px;
+	width: 50%;
+	float: left;
+	position: relative;
+	overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+
+}
+
+/* Estilos para el efecto zoom al pasar el ratón por encima */
+.split:hover {
+  	transform: scale(1.1);
+}
+
+.split:active,
+  .split:focus {
+    outline: none;
+    transform: scale(1);
+  }
+
+
+.left {
+	background-image: url('../imagenes/bmw-x6-2-93d8.jpg');
+    background-repeat: no-repeat;
+
+}
+
+.right {
+	background-image: url('../imagenes/bmwsizebueno.jpg');
+    background-repeat: no-repeat;
+
+}
+
+.ocasion {
+	position: absolute;
+	bottom: 20px;
+	left: 54%;
+	color: white;
+    font-family: Georgia;
+
+}
+
+.vendidos {
+	position: absolute;
+	bottom: 20px;
+	left: 49%;
+	color: white;
+    font-family: Georgia;
+
+}
+
+/* Estilos para el contenedor de las imágenes */
+.split-container {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+/* Estilos para el contenido principal */
+main {
+	width: 100%;
+	margin-top: 20px;
+}
+
+/* Navbar */
+.nav-link{
+    text-align: center;
+  }
+
+/***********************************************************************************/
+
