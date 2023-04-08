@@ -71,7 +71,7 @@
       
         // Conexión a la base de datos
 
-        $db = new PDO('mysql:host=localhost;dbname=proyectofinalconcesionario', 'root', '');
+        $db = new PDO('mysql:host=localhost;dbname=proyectofinalconcesionario', 'carlosseble', 'proyectofinal**1937');
 
         // Preparar la consulta para obtener todos los registros
         $sql = "SELECT * FROM motos";

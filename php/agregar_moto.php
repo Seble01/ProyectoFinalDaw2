@@ -1,7 +1,7 @@
 <?php
 // Conexión a la base de datos
 $db = new PDO('mysql:host=localhost;dbname=proyectofinalconcesionario', 'root', '');
-
+ 
 // Recoger los datos enviados por el formulario
 $nombre = $_POST['nombre'];
 $modelo = $_POST['modelo'];

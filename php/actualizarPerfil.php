@@ -6,7 +6,7 @@ if (!isset($_SESSION['correo']))
   header("Location: ../index.php");
   exit();
 }
-
+ 
 // Obtener los datos del formulario
 echo "<pre>";
 print_r($_POST);
@@ -19,8 +19,8 @@ $contrasena = $_POST['contrasena'];
 
 // Conexión a la base de datos
 $host = "localhost";
-$user = "root";
-$password = "";
+$user = "carlosseble";
+$password = "proyectofinal**1937";
 $database = "proyectofinalconcesionario";
 $conn = mysqli_connect($host, $user, $password, $database);
 

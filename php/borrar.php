@@ -3,7 +3,7 @@
 if(isset($_POST['ID_MOTO'])) {
   // Obtenemos el valor del parámetro "id"
   $id = $_POST['ID_MOTO'];
-
+ 
   // Realizamos la conexión a la base de datos
   $servername = "localhost";
   $username = "root";
