@@ -262,6 +262,13 @@ botonesEliminar.forEach(botonEliminar => {
 
 </script>
 
+<script>
+  document.querySelector('.boton-comprar').addEventListener('click', function() {
+    alert('¡GRACIAS POR SU COMPRA!');
+  }); 
+</script>
+
+
 
 <script>
  const navbarToggle = document.querySelector('.navbar-toggler');
