@@ -116,7 +116,7 @@ button:hover {
   <tbody>
     <?php
     // Realizamos la conexión a la base de datos
-    $conn = new mysqli("localhost", "carlosseble", "proyectofinal**1937", "proyectofinalconcesionario");
+    $conn = new mysqli("localhost", "root", "", "proyectofinalconcesionario");
     if ($conn->connect_error) {
       die("Error al conectar con la base de datos: " . $conn->connect_error);
     }
@@ -140,6 +140,64 @@ button:hover {
         echo "<td>" . $row["STOCK"] . "</td>";
         
         echo "<td><button onclick='borrar(" . $row["ID_MOTO"] . ")'>Borrar</button></td>";
+        echo "</tr>";
+      }
+    } 
+    
+    else 
+    {
+      echo "<tr><td colspan='9'>No hay resultados</td></tr>";
+    }
+
+    // Cerramos la conexión a la base de datos
+    $conn->close();
+    ?>
+  </tbody>
+</table>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Modelo</th>
+      <th>Año</th>
+      <th>Tipo Combustible</th>
+      <th>CV</th>
+      <th>Precio</th>
+      <th>Stock</th>
+      <th>Borrar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php
+    // Realizamos la conexión a la base de datos
+    $conn = new mysqli("localhost", "root", "", "proyectofinalconcesionario");
+    if ($conn->connect_error) {
+      die("Error al conectar con la base de datos: " . $conn->connect_error);
+    }
+
+    // Realizamos la SELECT para obtener los datos de la tabla motos
+    $sql = "SELECT * FROM coches";
+    $result = $conn->query($sql);
+
+    // Mostramos los datos en la tabla
+    if ($result->num_rows > 0) 
+    {
+      while($row = $result->fetch_assoc()) 
+      {
+        echo "<tr>";
+        echo "<td>" . $row["ID_COCHE"] . "</td>";
+        echo "<td>" . $row["NOMBRE"] . "</td>";
+        echo "<td>" . $row["MODELO"] . "</td>";
+        echo "<td>" . $row["AÑO"] . "</td>";
+        echo "<td>" . $row["TIPO_COCHE"] . "</td>";
+        echo "<td>" . $row["CV"] . "</td>";
+        echo "<td>" . $row["PRECIO"] . "</td>";
+        echo "<td>" . $row["STOCK"] . "</td>";
+        
+        echo "<td><button onclick='borrar(" . $row["ID_COCHE"] . ")'>Borrar</button></td>";
         echo "</tr>";
       }
     } 

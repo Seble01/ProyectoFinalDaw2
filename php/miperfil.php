@@ -9,8 +9,8 @@ if (!isset($_SESSION['correo']))
 
 // Conexión a la base de datos
 $host = "localhost";
-$user = "carlosseble";
-$password = "proyectofinal**1937";
+$user = "root";
+$password = "";
 $database = "proyectofinalconcesionario";
 $conn = mysqli_connect($host, $user, $password, $database);
 
@@ -64,7 +64,7 @@ mysqli_close($conn);
           <a class="nav-link" href="miperfil.php"><?php echo 'Mi Perfil ('. $_SESSION['correo'] .')' ?></a>
       </li>
       <li class="nav-item divider">
-        <a class="nav-link" href="carrito.php" id="about">Carrito</a>
+        <a class="nav-link" href="../vehiculos/carrito.php" id="about">Carrito</a>
       </li>
       <li class="nav-item divider">
         <a class="nav-link" href="" onclick="logout()">Cerrar sesión</a>
@@ -92,10 +92,12 @@ mysqli_close($conn);
   </div>
   <div class="mb-3">
     <label for="contrasena" class="form-label">Contraseña</label>
-    <div class="input-group">
-      <input type="password" class="form-control" id="contrasena" name="contrasena" value="<?php echo $usuario['PASSWORD']; ?>">
-    </div>
+      <div class="input-group">
+        <input type="password" class="form-control" id="contrasena" name="contrasena" value="<?php echo $usuario['PASSWORD']; ?>">
+        <button type="button" id="togglePassword" class="btn btn-outline-secondary" onclick="togglePasswordVisibility()">Mostrar</button>
+      </div>
   </div>
+
   <button type="submit" class="btn btn-primary">Actualizar</button>
 </form>
 </div>
@@ -112,6 +114,33 @@ mysqli_close($conn);
       </footer>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
       <script src="cerrarSesion.js"></script>
+
+      <script>
+
+        function togglePasswordVisibility() {
+          const passwordInput = document.getElementById("contrasena");
+          const toggleButton = document.getElementById("togglePassword");
+          
+          if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            toggleButton.textContent = "Ocultar";
+          } else {
+            passwordInput.type = "password";
+            toggleButton.textContent = "Mostrar";
+          }
+        }
+
+        // Ocultar la contraseña al cargar la página
+        document.addEventListener("DOMContentLoaded", function() {
+          const passwordInput = document.getElementById("contrasena");
+          const toggleButton = document.getElementById("togglePassword");
+          
+          passwordInput.type = "password";
+          toggleButton.textContent = "Mostrar";
+        });
+
+
+      </script>
 
       </body>
 </html>

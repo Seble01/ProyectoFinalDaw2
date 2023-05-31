@@ -1,8 +1,8 @@
 <?php
 
 $servername = "localhost";
-$username = "carlosseble";
-$password = "proyectofinal**1937";
+$username = "root";
+$password = "";
 $dbname = "proyectofinalconcesionario";
 
 // Crear la conexión a la base de datos

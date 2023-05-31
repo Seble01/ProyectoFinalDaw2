@@ -68,7 +68,7 @@
 <?php
 
 // Conexión a la base de datos
-$conexion = new mysqli("localhost", "carlosseble", "proyectofinal**1937", "proyectofinalconcesionario");
+$conexion = new mysqli("localhost", "root", "", "");
 
 // Inicializa el precio total
 $precioTotal = 0;
@@ -173,8 +173,10 @@ $precioTotal += $moto['precio'];
       -->
     </td>
     <td>
-      <?php if (isset($_SESSION['correo'])) : ?>
-        <form action="comprar.php" method="POST">
+  <?php if (isset($_SESSION['carrito']) && !empty($_SESSION['carrito'])) : ?>
+    <?php if (isset($_SESSION['correo'])) : ?>
+      <form action="comprar.php" method="POST">
+
         <input type="hidden" name="id" value="<?php echo $moto['id']; ?>">
         <input type="hidden" name="nombre" value="<?php echo $moto['nombre'] ?>">
         <input type="hidden" name="modelo" value="<?php echo $moto['modelo'] ?>">
@@ -182,14 +184,17 @@ $precioTotal += $moto['precio'];
         <input type="hidden" name="cv" value="<?php echo $moto['cv'] ?>">
         <input type="hidden" name="tipo_vehiculo" value="<?php echo $moto['tipo_vehiculo'] ?>">
         <input type="hidden" name="precio" value="<?php echo $moto['precio'] ?>">
-
-          <input type="submit" name="submit" class="boton-comprar" value="Comprar">
-        </form>
-      <?php else : ?>
-        <button class="btn-buy" disabled>Comprar</button>
-        <p>Inicie Sesión para comprar los productos</p>
-      <?php endif; ?>
-    </td>
+        <!-- Agrega el atributo disabled si el carrito está vacío -->
+        <input type="submit" name="submit" class="boton-comprar" value="Comprar" <?php if (empty($_SESSION['carrito'])) echo 'disabled'; ?>>
+      </form>
+    <?php else : ?>
+      <button class="btn-buy" disabled>Comprar</button>
+      <p>Inicie Sesión para comprar los productos</p>
+    <?php endif; ?>
+  <?php else : ?>
+    <button class="btn-buy" disabled>Comprar</button>
+  <?php endif; ?>
+</td>
   </tr>
 </tbody>
 </table>
