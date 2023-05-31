@@ -9,7 +9,7 @@ if (isset($_GET['id'])) {
 }
 
 // Conexión a la base de datos
-$db = new PDO('mysql:host=localhost;dbname=proyectofinalconcesionario', 'carlosseble', 'proyectofinal**1937');
+$db = new PDO('mysql:host=localhost;dbname=proyectofinalconcesionario', 'root', '');
 
 // Preparar la consulta para obtener los detalles del modelo
 $sql = "SELECT * FROM coches WHERE ID_COCHE = :id";
@@ -135,7 +135,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'Añadir al Carrito') {
 
 
 
-      <div class="container">
+<div class="container">
   <div class="card">
     <div class="card-header">
       Información del Producto
@@ -153,23 +153,22 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'Añadir al Carrito') {
             <li class="list-group-item"><strong>Modelo:</strong> <?php echo $row['MODELO'] ?></li>
             <li class="list-group-item"><strong>Año:</strong> <?php echo $row['AÑO'] ?></li>
             <li class="list-group-item"><strong>Potencia:</strong> <?php echo $row['CV'] ?>CV</li>
-
           </ul>
           <form action="carrito.php" method="POST">
-          <input type="hidden" name="tipo_vehiculo" value="coche">
-          <input type="hidden" name="id" value="<?php echo $row['ID_COCHE'] ?>">
-          <input type="hidden" name="nombre" value="<?php echo $row['NOMBRE'] ?>">
-          <input type="hidden" name="modelo" value="<?php echo $row['MODELO'] ?>">
-          <input type="hidden" name="año" value="<?php echo $row['AÑO'] ?>">
-          <input type="hidden" name="cv" value="<?php echo $row['CV'] ?>">
-          <input type="hidden" name="precio" value="<?php echo $row['PRECIO'] ?>">
-          <input type="hidden" name="stock" value="<?php echo $row['STOCK'] ?>">
+            <input type="hidden" name="tipo_vehiculo" value="coche">
+            <input type="hidden" name="id" value="<?php echo $row['ID_COCHE'] ?>">
+            <input type="hidden" name="nombre" value="<?php echo $row['NOMBRE'] ?>">
+            <input type="hidden" name="modelo" value="<?php echo $row['MODELO'] ?>">
+            <input type="hidden" name="año" value="<?php echo $row['AÑO'] ?>">
+            <input type="hidden" name="cv" value="<?php echo $row['CV'] ?>">
+            <input type="hidden" name="precio" value="<?php echo $row['PRECIO'] ?>">
+            <input type="hidden" name="stock" value="<?php echo $row['STOCK'] ?>">
             <input type="hidden" name="cantidad" value="1">
             <div class="form-group mt-3">
               <?php if (isset($_SESSION['correo'])) : ?>
                 <button type="submit" class="btn btn-primary">Agregar al Carrito</button>
               <?php else: ?>
-                <button class="btn btn-primary" disabled>Inicie Sesión para Comprar</button>
+                <a class="btn btn-primary" href="../perfilado.html">Inicie Sesión para Comprar</a>
               <?php endif; ?>
             </div>
           </form>
@@ -180,15 +179,17 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'Añadir al Carrito') {
 </div>
 
 
+
       
 
 
-      <!-- Footer -->
-      <footer class="bg-dark text-white py-3">
-          <div class="containerFooter text-center">
-              <p class="pFooter">© 2023 Mi Sitio Web</p>
-          </div>
-      </footer>
+        <!-- Footer -->
+    <footer class="bg-dark text-white py-3">
+      <div class="container text-center">
+        <p>© 2023 Tech-Beff</p>
+        <p>Carlos Serrano Blesa</p>
+      </div>
+    </footer>
 
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

@@ -40,43 +40,37 @@
 
       
 
-    <!-- Formulario de inicio de sesión -->
-
-    <div id="contenedor-inicio-sesion" class="formIni">
-      <h2 class="iniciar">Iniciar sesión</h2>
-      <div class="formulario">
-        <form id="form-inicio-sesion" method="POST" class="formIni">
-          <label for="correo">ID del Cliente (Correo):</label>
-          <input type="email" id="correo" name="correo" required>
-        
-          <label for="contrasena">Contraseña:</label>
-          <input type="password" id="password" name="password" required>
-          <input type="checkbox" name="remember_me" value="1"> Recordar sesión<br>
-        
-          <div class="botones">
-            <button type="submit">Iniciar sesión</button>
-          </div>
-        </form>
-        <p>¿No tienes una cuenta? <a href="#" id="enlace-registro">Crear una cuenta</a></p>
-        <div id="error-message" class="error" style="display: none">Usuario o contraseña incorrectos</div>
-
+      <div id="contenedor-inicio-sesion" class="formIni">
+        <h2 class="iniciar">Iniciar sesión</h2>
+        <div class="formulario">
+          <form id="form-inicio-sesion" method="POST" class="formIni">
+            <label for="correo">ID del Cliente (Correo):</label>
+            <input type="email" id="correo" name="correo" required>
+      
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+            <input type="checkbox" name="remember_me" value="1"> Recordar sesión<br>
+      
+            <div class="botones">
+              <button type="submit">Iniciar sesión</button>
+            </div>
+          </form>
+          <p>¿No tienes una cuenta? <a href="#" id="enlace-registro">Crear una cuenta</a></p>
+          <div id="error-message" class="error" style="display: none">Usuario o contraseña incorrectos</div>
+        </div>
       </div>
-    </div>
-    
-    
-    
-    <!-- Cierre de inicio de sesión -->
-
-
-    <!-- Formulario de registro -->
-
-    <div id="form-registro" style="display:none">
+      
+      <!-- Cierre de inicio de sesión -->
+      
+      <!-- Formulario de registro -->
+      
+      <div id="form-registro" style="display:none">
         <h2 class="res">Crear una cuenta</h2>
         <div class="formularioRes">
           <form action="php/registro.php" method="post" class="formFin">
             <div class="campo">
               <label for="nombre-usuario">Nombre de usuario:</label>
-              <input type="text" id="nombre-usuario" name="nombre-usuario" required >
+              <input type="text" id="nombre-usuario" name="nombre-usuario" required>
             </div>
             <div class="campo">
               <label for="apellidos">Apellidos:</label>
@@ -95,11 +89,40 @@
             </div>
           </form>
           <p>¿Ya tienes una cuenta? <a href="#" id="enlace-sesion">Iniciar Sesión</a></p>
-
         </div>
-    </div>
-
-    <!-- Cierre Formulario de registro -->
+      </div>
+      
+      <script>
+        document.querySelector('.formFin').addEventListener('submit', function(event) {
+          const nombreUsuario = document.getElementById('nombre-usuario').value.trim();
+          const apellidos = document.getElementById('apellidos').value.trim();
+          const correo = document.getElementById('correo').value.trim();
+          const contrasena = document.getElementById('password').value.trim();
+      
+          if (nombreUsuario === '') {
+            alert('Por favor, ingresa tu nombre de usuario.');
+            event.preventDefault();
+          }
+      
+          if (apellidos === '') {
+            alert('Por favor, ingresa tus apellidos.');
+            event.preventDefault();
+          }
+      
+          if (correo === '') {
+            alert('Por favor, ingresa tu correo electrónico.');
+            event.preventDefault();
+          }
+      
+          if (contrasena === '') {
+            alert('Por favor, ingresa tu contraseña.');
+            event.preventDefault();
+          }
+        });
+      </script>
+      
+      
+      
 
   
   
@@ -108,12 +131,18 @@
 
       </button>
   
-      <!-- Footer -->
-      <footer class="bg-dark text-white py-3">
-          <div class="containers text-center">
-            <p>© 2023 Tech-Beff</p>
-          </div>
-      </footer>
+        <!-- Footer -->
+    <footer class="bg-dark text-white py-3">
+      <div class="container text-center">
+        <p>© 2023 Tech-Beff</p>
+        <p>Carlos Serrano Blesa</p>
+        <div class="social-icons">
+          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="linkedin"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </footer>
   
       
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Tech-Beff</title>
-    <!-- Estilos CSS -->
+    
+    <!-- CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="estilos/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
     <script src="js/botonContacto.js"></script>
 
 
@@ -65,7 +70,6 @@
   
   <!-- Carousel -->
     <div class="container-fluid">
-        <!-- Carousel -->
       </div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -201,12 +205,18 @@
 
     <!-- Footer -->
     <footer class="bg-dark text-white py-3">
-        <div class="container text-center">
+      <div class="container text-center">
         <p>© 2023 Tech-Beff</p>
+        <p>Carlos Serrano Blesa</p>
+        <div class="social-icons">
+          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="linkedin"><i class="fab fa-linkedin"></i></a>
         </div>
+      </div>
     </footer>
 
-    <!-- Scripts de Bootstrap -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/slider.js"></script>
     <script src="js/cerrarSesion.js"></script>
@@ -215,23 +225,22 @@
 
       function initMap() 
       {
-        // Crea una instancia del mapa
+
         var map = new google.maps.Map(document.getElementById('map'), 
         {
           center: {lat: 37.350121, lng:  -5.943317},
           zoom: 8
         });
 
-        // Establece la ubicación de tu tienda
         var marker = new google.maps.Marker({
           position: {lat: 37.350121, lng:  -5.943317},
           map: map,
-          title: 'Mi Tienda'
+          title: 'Mi Tienda - Tech-Beff'
         });
       }
 
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrl22wH4Y5jFHZwJClWR12wszi4MB8eVw&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUx6bM2Wqb7FnNXlvtnMHEd0MpdsIaRI&callback=initMap" async defer></script>
 
     
 

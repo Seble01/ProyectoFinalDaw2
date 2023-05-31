@@ -1,48 +1,24 @@
 <?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  // Obtén los valores del formulario
+  $nombre = $_POST['nombre'];
+  $apellidos = $_POST['apellidos'];
+  $correo = $_POST['correo'];
+  $mensaje = $_POST['mensaje'];
 
-require 'phpmail/src/PHPMailer.php';
-require 'phpmail/src/SMTP.php';
-require 'phpmail/src/Exception.php';
+  // Configura el correo electrónico
+  $destinatario = 'proyectofinaltechbeff@gmail.com';
+  $asunto = 'Nuevo formulario de contacto';
+  $cuerpo = "Nombre: $nombre\nApellidos: $apellidos\nCorreo: $correo\nMensaje: $mensaje";
+  $cabeceras = "From: $correo";
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-  $nombre = $_POST["nombre"];
-  $apellidos = $_POST["apellidos"];
-  $correo = $_POST["correo"];
-  $mensaje = $_POST["mensaje"];
-
-  // Configuración del servidor de correo
-  $mail = new PHPMailer(true);
-  $mail->isSMTP();
-  $mail->Host       = 'smtp.gmail.com';
-  $mail->SMTPAuth   = true;
-  $mail->Username   = '';
-  $mail->Password   = '';
-  $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-  $mail->Port       = 587;
-
-  // Configuración del mensaje
-  $mail->setFrom($correo, $nombre . ' ' . $apellidos);
-  $mail->addAddress('');
-  $mail->isHTML(false);
-  $mail->Subject = 'Nuevo mensaje del formulario de contacto';
-  $mail->Body    = "Nombre: $nombre\n" .
-                   "Apellidos: $apellidos\n" .
-                   "Correo electrónico: $correo\n" .
-                   "Mensaje:\n$mensaje\n";
-
-  // Envío del correo
-  try {
-    $mail->send();
-    echo 'Mensaje enviado correctamente';
-  } catch (Exception $e) {
-    echo 'No se pudo enviar el mensaje. Error: ', $mail->ErrorInfo;
+  // Envía el correo electrónico
+  if (mail($destinatario, $asunto, $cuerpo, $cabeceras)) {
+    echo 'El formulario ha sido enviado exitosamente.';
+  } else {
+    echo 'Error al enviar el formulario. Por favor, inténtalo nuevamente.';
   }
-
+} else {
+  echo 'Acceso no válido.';
 }
-
 ?>

@@ -12,6 +12,7 @@
        <!-- Estilos CSS -->
        
        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
        <link href="../estilos/stylesAnadirMoto.css" rel="stylesheet">
 </head>
 <body>
@@ -59,7 +60,7 @@
 
 
 <form action="agregar_moto.php" id="formulario" method="post" class="formularioInscripcion" enctype="multipart/form-data">
-<h2>Agregar nueva Moto</h2>
+  <h2>Agregar nueva Moto</h2>
 
   <label for="nombre">Nombre:</label>
   <input type="text" name="nombre" id="nombre" required>
@@ -82,51 +83,57 @@
   <label for="imagen">Imagen:</label>
   <input type="file" name="imagen" id="imagen" required>
 
-  <button type="submit">Agregar</button>
+  <button type="submit" id="submit-btn">Agregar</button>
+  
+  <div class="alert alert-danger d-none" id="error-message" role="alert">
+    El archivo seleccionado no es una imagen válida.
+  </div>
 </form>
 
+<!-- Footer -->
+<footer class="bg-dark text-white py-3">
+  <div class="container text-center">
+    <p>© 2023 Tech-Beff</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="cerrarRestoAdmin.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $("#formulario").submit(function(event) {
+      // extensión archivo seleccionado
+      var extension = $('#imagen').val().split('.').pop().toLowerCase();
+
+      // verifica si extensión es válida
+      if (jQuery.inArray(extension, ['gif','png','jpg','jpeg']) == -1) {
+          event.preventDefault();
+          $('#submit-btn').addClass('disabled');
+          $('#error-message').removeClass('d-none'); // Quitamos la clase d-none
+          return false;
+        }
 
 
-    
-  
-      <!-- Footer -->
-      <footer class="bg-dark text-white py-3">
-          <div class="container text-center">
-          <p>© 2023 Tech-Beff</p>
-          </div>
-      </footer>
+      // Recoger los datos del formulario
+      var formData = $(this).serialize();
+
+      // Enviar la petición AJAX
+      $.ajax({
+        type: "POST",
+        url: "agregar_moto.php",
+        data: formData,
+        success: function() {
+          alert("Inserción Correcta");
+          $("#motos").load("vehiculos/motos.php #motos");
+        }
+      });
+    });
+  });
+</script>
 
 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="cerrarRestoAdmin.js"></script>
 
-      <script>
-            $(document).ready(function() 
-            {
-                $("#formulario").submit(function(event) 
-                {
-                    // Prevenir que el formulario se envíe de forma tradicional
-                    event.preventDefault();
-                    
-                    // Recoger los datos del formulario
-                    var formData = $(this).serialize();
-                    
-                    // Enviar la petición AJAX
-                    $.ajax(
-                        {
-                            type: "POST",
-                            url: "agregar_moto.php",
-                            data: formData,
-                            success: function() 
-                            {
-                                alert("Inserción Correcta");
-                                // Actualizar la página sin recargarla
-                                $("#motos").load("vehiculos/motos.php #motos");
-                            }
-                        });
-                });
-            });
-    </script>
 
 
 </body>

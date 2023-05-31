@@ -30,19 +30,7 @@
       </li>
 
       <li class="nav-item divider">
-        <a class="nav-link"  href="anadirMoto.php">Añadir Moto</a>
-      </li>
-
-      <li class="nav-item divider">
-        <a class="nav-link"  href="anadirCoche.php">Añadir Coche</a>
-      </li>
-
-      <li class="nav-item divider">
-        <a class="nav-link"  href="borrarMoto.php">Borrar Moto</a>
-      </li>
-
-      <li class="nav-item divider">
-        <a class="nav-link"  href="borrarCoche.php">Borrar Coche</a>
+        <a class="nav-link"  href="anadirCoche.php">Gestión de Vehículos</a>
       </li>
 
       <li class="nav-item divider">
@@ -91,7 +79,7 @@
 
 <?php
  // Realizamos la conexión a la base de datos
- $conexion = new mysqli("localhost", "carlosseble", "proyectofinal**1937", "proyectofinalconcesionario");
+ $conexion = new mysqli("localhost", "root", "", "proyectofinalconcesionario");
  if ($conexion->connect_error) 
  {
    die("Error al conectar con la base de datos: " . $conexion->connect_error);

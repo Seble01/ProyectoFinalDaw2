@@ -1,6 +1,6 @@
 <?php
 // Realizamos la conexión a la base de datos
-$conexion = new mysqli("localhost", "carlosseble", "proyectofinal**1937", "proyectofinalconcesionario");
+$conexion = new mysqli("localhost", "root", "", "proyectofinalconcesionario");
 if ($conexion->connect_error) {
     die("Error al conectar con la base de datos: " . $conexion->connect_error);
 }

@@ -143,3 +143,25 @@ body {
     margin-left: 41%;
     margin-top: -7%;
   }
+
+  @media (max-width: 768px) {
+    .iniciar,
+    .res,
+    .p {
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+  
+    .formulario,
+    .formularioRes {
+      width: 80%;
+      margin: 10% auto;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .formulario,
+    .formularioRes {
+      width: 90%;
+    }
+  }

@@ -76,7 +76,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 }
 /*
 // Generar el PDF del resumen de la compra
-require_once('F:\carpetaXAMP\htdocs\ProyectoFinal-DAW\vehiculos\fpdf185\fpdf.php');
+require_once('D:\xampp\htdocs\ProyectoFinal-local\vehiculos\fpdf185\fpdf.php');
 
 unset($_SESSION['carrito']);
 // Crear la clase PDF extendiendo la clase FPDF
@@ -142,14 +142,14 @@ echo $pdfContent;
 */
 
 // Conexión a la base de datos
-$db = new PDO('mysql:host=localhost;dbname=proyectofinalconcesionario', 'carlosseble', 'proyectofinal**1937');
+$db = new PDO('mysql:host=localhost;dbname=proyectofinalconcesionario', 'root', '');
 
 // Recuperamos los datos del formulario de compra
 $productos = $_SESSION['carrito'];
 
 // Comprobamos si el usuario ha iniciado sesión
 if (isset($_SESSION['correo'])) {
-    // Recuperamos el ID del usuario
+
     $correo = $_SESSION['correo'];
     $query = "SELECT ID FROM usuarios WHERE correo = :correo";
     $statement = $db->prepare($query);
@@ -161,20 +161,17 @@ if (isset($_SESSION['correo'])) {
     $query = "INSERT INTO carrito (ID_USUARIO, ID_PRODUCTO, TIPO_PRODUCTO, NOMBRE, MODELO, ANO, CV, PRECIO) VALUES (:id_usuario, :id_producto, :tipo_producto, :nombre, :modelo, :ano, :cv, :precio)";
     $statement = $db->prepare($query);
 
-    // Recorrer los productos comprados para actualizar el stock en la base de datos
     foreach ($productos as $producto) {
       $id_producto = $producto['id'];
       $tipo = $producto['tipo_vehiculo'];
-      $cantidad = 1; // en este ejemplo se asume que el usuario solo puede comprar una unidad de cada producto, pero esto puede cambiar según tus requerimientos
+      $cantidad = 1; 
 
-      // Consultar el stock actual del producto en la base de datos
       $query = "SELECT STOCK FROM " . ($tipo == 'moto' ? "motos" : "coches") . " WHERE ID_" . ($tipo == 'moto' ? "MOTO" : "COCHE") . " = :id_producto";
       $statement = $db->prepare($query);
       $statement->execute(array(':id_producto' => $id_producto));
       $row = $statement->fetch();
       $stock_actual = $row['STOCK'];
 
-      // Actualizar el stock en la base de datos
       $nuevo_stock = $stock_actual - $cantidad;
       $query = "UPDATE " . ($tipo == 'moto' ? "motos" : "coches") . " SET STOCK = :nuevo_stock WHERE ID_" . ($tipo == 'moto' ? "MOTO" : "COCHE") . " = :id_producto";
       $statement = $db->prepare($query);
@@ -188,7 +185,7 @@ if (isset($_SESSION['correo'])) {
     unset($_SESSION['carrito']);
 
     // Redirigimos al usuario a la página de carrito de compras
-    header("Location: carrito.php?compra_exitosa=true");
+    header("Location: ../novedades.php");
     exit();
 } else {
     // Si el usuario no ha iniciado sesión, lo redirigimos a la página de inicio de sesión
@@ -200,33 +197,43 @@ if (isset($_SESSION['correo'])) {
 
 ?>
 
+<!-- Agrega el enlace a jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.10.2/jspdf.umd.min.js"></script>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-3">
-        <div class="container text-center">
-            <p>© 2023 Mi Sitio Web</p>
-        </div>
-    </footer>
+<script>
+  // Recuperamos los datos del formulario de compra
+  var productos = <?php echo json_encode($_SESSION['carrito']); ?>;
 
-    <script>
-// Crear una función que se ejecutará cuando la respuesta AJAX sea recibida
-function mostrarMensaje() {
-  // Crear un elemento de mensaje y agregarlo al cuerpo del documento
-  var mensaje = document.createElement('div');
-  mensaje.innerHTML = 'Compra Exitosa';
-  document.body.appendChild(mensaje);
-}
+  // Crear un nuevo objeto PDF
+  var doc = new jsPDF();
 
-// Crear una solicitud AJAX para mostrar el mensaje
-var xhr = new XMLHttpRequest();
-xhr.onreadystatechange = function() {
-  if (xhr.readyState === 4 && xhr.status === 200) {
-    mostrarMensaje();
-  }
-};
-xhr.open('GET', 'mostrar_mensaje.php', true);
-xhr.send();
+  // Agregar el contenido del PDF
+  doc.text("Detalles de la compra", 10, 10);
+  doc.setFontSize(12);
+  var y = 20;
+  productos.forEach(function(producto, index) {
+    var row = (index + 1) + ". " + producto.nombre + ": " + producto.precio + "€";
+    doc.text(row, 10, y);
+    y += 10;
+  });
+
+  // Descargar el PDF
+  doc.save("carrito.pdf");
 </script>
+
+
+      <!-- Footer -->
+      <footer class="bg-dark text-white py-3">
+      <div class="container text-center">
+        <p>© 2023 Tech-Beff</p>
+        <p>Carlos Serrano Blesa</p>
+        <div class="social-icons">
+          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="linkedin"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </footer>
 
     <!-- Scripts de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

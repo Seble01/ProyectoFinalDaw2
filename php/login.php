@@ -6,8 +6,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
   // Conectamos a la base de datos utilizando PDO
   $dsn = 'mysql:host=localhost;dbname=proyectofinalconcesionario';
-  $usuario = 'carlosseble';
-  $contrasena = 'proyectofinal**1937';
+  $usuario = 'root';
+  $contrasena = '';
   $opciones = array(
       PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
       PDO::ATTR_EMULATE_PREPARES => false
@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
   { 
     // Si no encontramos un usuario
     http_response_code(400); // Cambiamos el código de respuesta HTTP a 400 para indicar un error
-    echo json_encode(['error' => 'El Usuario No existe, por favor, introduzca un usuario correcto']); // Devolvemos un JSON con el mensaje de error
+    echo json_encode(['error' => 'Usuario desconocido o contraseña errónea']); // Devolvemos un JSON con el mensaje de error
   }
 
   // Cerrar la conexión

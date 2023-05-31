@@ -92,7 +92,7 @@
         $correo = $_SESSION['correo'];
 
         // Conectarse a la base de datos
-        $conexion = new mysqli("localhost", "carlosseble", "proyectofinal**1937", "proyectofinalconcesionario");
+        $conexion = new mysqli("localhost", "root", "", "proyectofinalconcesionario");
 
         $sqlID = "SELECT ID FROM usuarios WHERE CORREO = '$correo'";
         //echo $sqlID;
@@ -144,11 +144,17 @@
     
 
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-3">
-        <div class="container text-center">
-            <p>© 2023 Mi Sitio Web</p>
+     <!-- Footer -->
+     <footer class="bg-dark text-white py-3">
+      <div class="container text-center">
+        <p>© 2023 Tech-Beff</p>
+        <p>Carlos Serrano Blesa</p>
+        <div class="social-icons">
+          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="linkedin"><i class="fab fa-linkedin"></i></a>
         </div>
+      </div>
     </footer>
 
     <!-- Scripts de Bootstrap -->

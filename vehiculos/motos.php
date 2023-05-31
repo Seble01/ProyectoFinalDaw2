@@ -71,7 +71,7 @@
       
         // Conexión a la base de datos
 
-        $db = new PDO('mysql:host=localhost;dbname=proyectofinalconcesionario', 'carlosseble', 'proyectofinal**1937');
+        $db = new PDO('mysql:host=localhost;dbname=proyectofinalconcesionario', 'root', '');
 
         // Preparar la consulta para obtener todos los registros
         $sql = "SELECT * FROM motos";
@@ -121,12 +121,18 @@
 
 
   
-      <!-- Footer -->
-      <footer class="bg-dark text-white py-3">
-          <div class="container text-center">
-              <p>© 2023 Mi Sitio Web</p>
-          </div>
-      </footer>
+       <!-- Footer -->
+    <footer class="bg-dark text-white py-3">
+      <div class="container text-center">
+        <p>© 2023 Tech-Beff</p>
+        <p>Carlos Serrano Blesa</p>
+        <div class="social-icons">
+          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="linkedin"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </footer>
 
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
