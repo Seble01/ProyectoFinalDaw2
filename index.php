@@ -240,7 +240,7 @@
       }
 
     </script>
-    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUx6bM2Wqb7FnNXlvtnMHEd0MpdsIaRI&callback=initMap" async defer></script>-!>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUx6bM2Wqb7FnNXlvtnMHEd0MpdsIaRI&callback=initMap" async defer></script>
 
     
 
