@@ -19,8 +19,8 @@ $contrasena = $_POST['contrasena'];
 
 // Conexión a la base de datos
 $host = "localhost";
-$user = "root";
-$password = "";
+$user = "carlosseble";
+$password = "proyectofinal**1937";
 $database = "proyectofinalconcesionario";
 $conn = mysqli_connect($host, $user, $password, $database);
 

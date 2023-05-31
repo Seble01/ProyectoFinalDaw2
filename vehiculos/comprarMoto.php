@@ -92,7 +92,7 @@
         $correo = $_SESSION['correo'];
 
         // Conectarse a la base de datos
-        $conexion = new mysqli("localhost", "root", "", "proyectofinalconcesionario");
+        $conexion = new mysqli("localhost", "carlosseble", "proyectofinal**1937", "proyectofinalconcesionario");
 
         $sqlID = "SELECT ID FROM usuarios WHERE CORREO = '$correo'";
         //echo $sqlID;

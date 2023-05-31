@@ -68,7 +68,7 @@
 <?php
 
 // Conexión a la base de datos
-$conexion = new mysqli("localhost", "root", "", "");
+$conexion = new mysqli("localhost", "carlosseble", "proyectofinal**1937", "proyectofinalconcesionario");
 
 // Inicializa el precio total
 $precioTotal = 0;
