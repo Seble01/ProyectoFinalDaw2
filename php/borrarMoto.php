@@ -120,6 +120,9 @@ button:hover {
     if ($conn->connect_error) {
       die("Error al conectar con la base de datos: " . $conn->connect_error);
     }
+    if ($conn->connect_error) {
+      die("Error al conectar con la base de datos: " . $conn->connect_error);
+    }
 
     // Realizamos la SELECT para obtener los datos de la tabla motos
     $sql = "SELECT * FROM motos";
@@ -173,7 +176,7 @@ button:hover {
   <tbody>
     <?php
     // Realizamos la conexión a la base de datos
-    $conn = new mysqli("localhost", "root", "", "proyectofinalconcesionario");
+    $conn = new mysqli("localhost", "carlosseble", "proyectofinal**1937", "proyectofinalconcesionario");
     if ($conn->connect_error) {
       die("Error al conectar con la base de datos: " . $conn->connect_error);
     }

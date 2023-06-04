@@ -13,12 +13,12 @@ if ($conn->connect_error) {
   die("Error al conectar con la base de datos: " . $conn->connect_error);
 }
 
-if (isset($_POST['nombre-usuario']) && isset($_POST['apellidos']) && isset($_POST['correo']) && isset($_POST['contrasena'])) 
+if (isset($_POST['nombre-usuario']) && isset($_POST['apellidos']) && isset($_POST['correo']) && isset($_POST['password'])) 
 {
   $nombre_usuario = $_POST['nombre-usuario'];
   $apellidos = $_POST['apellidos'];
   $correo = $_POST['correo'];
-  $contrasena = password_hash($_POST['contrasena'], PASSWORD_DEFAULT);
+  $contrasena = $_POST['password'];
 
   // Verificar si el correo ya está registrado en la base de datos
   $query = "SELECT correo FROM usuarios WHERE correo = '$correo'";

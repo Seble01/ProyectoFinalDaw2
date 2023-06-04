@@ -76,7 +76,7 @@
 
         $db = new PDO('mysql:host=localhost;dbname=proyectofinalconcesionario', 'carlosseble', 'proyectofinal**1937');
 
-        $sql = "SELECT * FROM coches";
+        $sql = "SELECT * FROM coches WHERE MODELO_COCHE='N'";
         $query = $db->prepare($sql);
 
         $query->execute();

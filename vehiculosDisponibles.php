@@ -62,14 +62,14 @@
 
         <main>
             <div class="split-container">
-                <a href="vehiculos/motos.php">
+                <a href="vehiculos/ocasion.php">
                     <div class="split left">
                         <h2 class="ocasion">Vehículos de Ocasión</h2>
                     </div>
                 </a>
-                <a href="vehiculos/coches.php">
+                <a href="vehiculos/masVendidos.php">
                     <div class="split right">
-                        <h2 class="vendidos">Más Vendidos</h2>
+                        <h2 class="vendidos">Gama Alta</h2>
                     </div>
                 </a>
             </div>

@@ -9,7 +9,8 @@ $db = new PDO('mysql:host=localhost;dbname=proyectofinalconcesionario', 'carloss
     $ano = $_POST['anio'];
     $cv = $_POST['cv'];
     $precio = $_POST['precio'];
-    $tipo_combustible = $_POST['combustible']; // Corregido aquí
+    $tipo_combustible = $_POST['combustible']; 
+    $tipo_modelo = $_POST['tipo_modelo']; 
     echo "Tipo de combustible: " . $tipo_combustible;
     $stock = $_POST['stock'];
 
@@ -18,7 +19,7 @@ $db = new PDO('mysql:host=localhost;dbname=proyectofinalconcesionario', 'carloss
     if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
         
         
-        $sql = "INSERT INTO coches (nombre, modelo, año, cv, tipo_coche, precio, stock, imagen) VALUES (:nombre, :modelo, :anio, :cv, :tipo_combustible, :precio, :stock, :imagen)";
+        $sql = "INSERT INTO coches (nombre, modelo, año, cv, tipo_coche, modelo_coche, precio, stock, imagen) VALUES (:nombre, :modelo, :anio, :cv, :tipo_combustible, :tipo_modelo, :precio, :stock, :imagen)";
         $query = $db->prepare($sql);
 
         $query->bindParam(':nombre', $nombre);
@@ -26,6 +27,7 @@ $db = new PDO('mysql:host=localhost;dbname=proyectofinalconcesionario', 'carloss
         $query->bindParam(':anio', $ano);
         $query->bindParam(':cv', $cv);
         $query->bindParam(':tipo_combustible', $tipo_combustible);
+        $query->bindParam(':tipo_modelo', $tipo_modelo);
         $query->bindParam(':precio', $precio);
         $query->bindParam(':stock', $stock);
 

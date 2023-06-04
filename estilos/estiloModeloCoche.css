@@ -1,263 +1,263 @@
 body {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia;
+  background-image: url("../imagenes/bmwserie1.jpg") ;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+color: #ffffff;  }
+
+.iconoInicio{
+  width: 15%;
+  height: 5%;
+}
+
+.bg-light {
+  background-color: #ffffff!important;
+}
+
+.comienzaCambio{
+  font-family: Georgia
+}
+
+footer {
+  background-color: #333;
+          color: #fff;
+          padding: 20px;
+          position: fixed;
+          bottom: 0;
+          width: 100%; 
+          height: 100px;
+}
+
+.nav-link{
+  text-align: center;
+}
+/*
+.container {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    margin-left: 20%;
+    margin-top: -1%;
+  }
+  .h1, h1 {
+    font-size: 2.5rem;
+    margin-top: -5px;
+    margin-left: 80px;
+}
+
+.details .descripcion
+{
+  margin-left: 18%;
+}
+
+
+
+div.buy 
+{
+  margin-left: -100%;
+  margin-top: 60%;
+}
+  
+  .details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 82px;
+    padding: 10px;
+    border: 1px solid #020310;
+    border-radius: 5px;
+    margin-left: 24%;
+    margin-top: 5%;
+    width: 50%;
+    background-color: #9aafd8;
+    color: black;
+  }
+
+  input.boton-comprar 
+  {
+    margin-left: -265%;
+    margin-top: 280%;
+  }
+  
+  .details img {
+    width: 368px;
+    margin-right: 20px;
+    margin-left: 80px;
+    max-width:368px;
+
+  }
+
+  .details img {
+    width: 368px;
+    margin-right: 20px;
+    margin-left: 80px;
+}
+
+  .right {
+    margin-left: 25%;
+    margin-bottom: auto;
+}
+  
+  .details ul {
+    list-style: none;
     margin: 0;
     padding: 0;
-    font-family: Georgia;
-    background-image: url("../imagenes/bmwserie1.jpg") ;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-color: #ffffff;  }
-  
-  .iconoInicio{
-    width: 15%;
-    height: 5%;
   }
   
-  .bg-light {
-    background-color: #ffffff!important;
+  .details li {
+    margin: 5px 0;
   }
   
-  .comienzaCambio{
-    font-family: Georgia
+  .accessories {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: -111%;
   }
 
-  footer {
-    background-color: #333;
-            color: #fff;
-            padding: 20px;
-            position: fixed;
-            bottom: 0;
-            width: 100%; 
-            height: 100px;
+  .idOculto
+  {
+    display: none;
   }
 
-  .nav-link{
+  button.btn-add 
+  {
+    margin-left: -155%;
+  }
+
+  .details li #stock{
+   display: none;
+  }
+
+  button.btn-buy 
+  {
+    margin-left: -182%;
+    margin-top: 222%;
+  }
+
+  
+
+  .inicio 
+  {
+    margin-left: -182%;
+  }
+
+  
+  .options h2 {
+    margin-bottom: 10px;
+  }
+  
+  .options label {
+    margin-right: 10px;
+  }
+  
+  .options button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .buy-button {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  p.pFooter:hover
+  {
     text-align: center;
   }
-/*
-  .container {
-      display: flex;
-      align-items: center;
-      margin: 20px;
-      margin-left: 20%;
-      margin-top: -1%;
-    }
-    .h1, h1 {
-      font-size: 2.5rem;
-      margin-top: -5px;
-      margin-left: 80px;
-  }
-
-  .details .descripcion
-  {
-    margin-left: 18%;
-  }
-
-  
-
-  div.buy 
-  {
-    margin-left: -100%;
-    margin-top: 60%;
-  }
-    
-    .details {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-left: 82px;
-      padding: 10px;
-      border: 1px solid #020310;
-      border-radius: 5px;
-      margin-left: 24%;
-      margin-top: 5%;
-      width: 50%;
-      background-color: #9aafd8;
-      color: black;
-    }
-
-    input.boton-comprar 
-    {
-      margin-left: -265%;
-      margin-top: 280%;
-    }
-    
-    .details img {
-      width: 368px;
-      margin-right: 20px;
-      margin-left: 80px;
-      max-width:368px;
-
-    }
-
-    .details img {
-      width: 368px;
-      margin-right: 20px;
-      margin-left: 80px;
-  }
-
-    .right {
-      margin-left: 25%;
-      margin-bottom: auto;
-  }
-    
-    .details ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    
-    .details li {
-      margin: 5px 0;
-    }
-    
-    .accessories {
-      margin-top: 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      margin-left: -111%;
-    }
-
-    .idOculto
-    {
-      display: none;
-    }
-
-    button.btn-add 
-    {
-      margin-left: -155%;
-    }
-
-    .details li #stock{
-     display: none;
-    }
-
-    button.btn-buy 
-    {
-      margin-left: -182%;
-      margin-top: 222%;
-    }
-
-    
-
-    .inicio 
-    {
-      margin-left: -182%;
-    }
-  
-    
-    .options h2 {
-      margin-bottom: 10px;
-    }
-    
-    .options label {
-      margin-right: 10px;
-    }
-    
-    .options button {
-      margin-top: 10px;
-      padding: 5px 10px;
-      border-radius: 5px;
-      border: none;
-      background-color: #007bff;
-      color: #fff;
-    }
-    
-    .buy-button {
-      margin-top: 20px;
-      padding: 10px;
-      border-radius: 5px;
-      border: none;
-      background-color: #28a745;
-      color: #fff;
-    }
-    
-    p.pFooter:hover
-    {
-      text-align: center;
-    }
 */
 
- 
+
 
 .container {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  width: 40%;
-  color: black;
+padding-top: 2rem;
+padding-bottom: 2rem;
+width: 40%;
+color: black;
 }
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .card-header {
-  background-color: #f1f1f1;
-  text-align: center;
+background-color: #f1f1f1;
+text-align: center;
 }
 
 .card-body {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: #94b1d3;
-  
+display: flex;
+flex-direction: row;
+align-items: center;
+background-color: #94b1d3;
+
 }
 
 .col-md-8 {
-  margin-left: 60%;
-  margin-top: -40%;
+margin-left: 60%;
+margin-top: -40%;
 }
 
 .card-body img {
-  margin-right: 2rem;
-  width: 200px;
-  height: 200px;
+margin-right: 2rem;
+width: 200px;
+height: 200px;
 }
 
 .card-title {
-  font-weight: bold;
-  font-size: 1.5rem;
+font-weight: bold;
+font-size: 1.5rem;
 }
 
 .list-group-item {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #212529;
-  border: none;
-  border-radius: 0;
-  padding: 0.5rem;
+font-size: 1.2rem;
+font-weight: bold;
+color: #212529;
+border: none;
+border-radius: 0;
+padding: 0.5rem;
 }
 
 .form-group {
-  margin-top: 2rem;
+margin-top: 2rem;
 }
 /* Estilos para dispositivos móviles */
 
 @media only screen and (max-width: 767px) {
-  .container {
-    width: 100%;
-    padding: 1rem;
-  }
+.container {
+  width: 100%;
+  padding: 1rem;
+}
 
-  .col-md-8 {
-    margin-left: 0;
-    margin-top: 1rem;
-  }
+.col-md-8 {
+  margin-left: 0;
+  margin-top: 1rem;
+}
 
-  .card-body {
-    flex-direction: column;
-    align-items: center;
-  }
+.card-body {
+  flex-direction: column;
+  align-items: center;
+}
 
-  .card-body img {
-    margin-right: 0;
-    margin-bottom: 1rem;
-  }
+.card-body img {
+  margin-right: 0;
+  margin-bottom: 1rem;
+}
 
-  .list-group-item {
-    font-size: 1rem;
-    padding: 0.25rem;
-  }
+.list-group-item {
+  font-size: 1rem;
+  padding: 0.25rem;
+}
 }

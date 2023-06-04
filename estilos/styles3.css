@@ -1,167 +1,167 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Georgia;
-    background-image: url("../imagenes/bmwserie1.jpg") ;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-  }
-  
-  .iconoInicio{
-    width: 15%;
-    height: 5%;
-  }
-  
-  .bg-light {
-    background-color: #ffffff!important;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: Georgia;
+  background-image: url("../imagenes/bmwserie1.jpg") ;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
-  footer {
-    background-color: #333;
-			color: #fff;
-			padding: 20px;
-			position: fixed;
-			bottom: 0;
-			width: 100%; 
-            height: 100px;
-  }
+.iconoInicio{
+  width: 15%;
+  height: 5%;
+}
 
-  .nav-link{
-    text-align: center;
-  }
+.bg-light {
+  background-color: #ffffff!important;
+}
 
-  .scroll-top-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #278aab;
+footer {
+  background-color: #333;
     color: #fff;
-    border: none;
-    padding: 10px;
-    border-radius: 100%;
-    font-size: 16px;
-    cursor: pointer;
-    z-index: 999;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-  }
-  
-  .scroll-top-btn.show {
-    opacity: 1;
-  }
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%; 
+          height: 100px;
+}
 
-  /*Para mostrar y ocultar el form*/
+.nav-link{
+  text-align: center;
+}
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #278aab;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.scroll-top-btn.show {
+  opacity: 1;
+}
+
+/*Para mostrar y ocultar el form*/
 /* Estilos para el formulario de registro */
 
 
 .formIni{
-    margin-top: 70px;
-    
+  margin-top: 70px;
+  
 }
 
 
 .formFin{
-    margin-top: 70px;
-    
+  margin-top: 70px;
+  
 }
 
-  .formulario {
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    padding: 18px;
-    /* margin-bottom: -23px; */
-    WIDTH: 20%;
-    margin: 5%;
-    margin-left: 40%;
-    height: 330px;
-    
+.formulario {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 18px;
+  /* margin-bottom: -23px; */
+  WIDTH: 20%;
+  margin: 5%;
+  margin-left: 40%;
+  height: 330px;
+  
+}
+
+.iniciar
+{
+  margin-left: 41%;
+  margin-bottom: -8%;
+}
+
+.res
+{
+  margin-left: 41%;
+  margin-bottom: -13%;
+  margin-top: 4%;
+}
+
+.error {
+  background-color: #ffdddd;
+  border: 1px solid #ff0000;
+  color: #ff0000;
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.formularioRes {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 18px;
+  /* margin-bottom: -23px; */
+  WIDTH: 20%;
+  margin: 10%;
+  margin-left: 40%;
+  height: 490px;
+  
+}
+
+.campo {
+  margin-bottom: 10px;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+input[type="text"], input[type="password"], input[type="email"] {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.p{
+  margin-bottom: 17rem;
+  margin-left: 41%;
+  margin-top: -7%;
+}
+
+@media (max-width: 768px) {
+  .iniciar,
+  .res,
+  .p {
+    margin-left: 50%;
+    transform: translateX(-50%);
   }
 
-  .iniciar
-  {
-    margin-left: 41%;
-    margin-bottom: -8%;
-  }
-
-  .res
-  {
-    margin-left: 41%;
-    margin-bottom: -13%;
-    margin-top: 4%;
-  }
-
-  .error {
-    background-color: #ffdddd;
-    border: 1px solid #ff0000;
-    color: #ff0000;
-    font-size: 14px;
-    margin-bottom: 10px;
-    padding: 10px;
-  }
-
+  .formulario,
   .formularioRes {
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    padding: 18px;
-    /* margin-bottom: -23px; */
-    WIDTH: 20%;
-    margin: 10%;
-    margin-left: 40%;
-    height: 490px;
-    
+    width: 80%;
+    margin: 10% auto;
   }
+}
 
-  .campo {
-    margin-bottom: 10px;
+@media (max-width: 576px) {
+  .formulario,
+  .formularioRes {
+    width: 90%;
   }
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  input[type="text"], input[type="password"], input[type="email"] {
-    width: 100%;
-    padding: 5px;
-    border-radius: 5px;
-    border: none;
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  button[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-
-  .p{
-    margin-bottom: 17rem;
-    margin-left: 41%;
-    margin-top: -7%;
-  }
-
-  @media (max-width: 768px) {
-    .iniciar,
-    .res,
-    .p {
-      margin-left: 50%;
-      transform: translateX(-50%);
-    }
-  
-    .formulario,
-    .formularioRes {
-      width: 80%;
-      margin: 10% auto;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .formulario,
-    .formularioRes {
-      width: 90%;
-    }
-  }
+}

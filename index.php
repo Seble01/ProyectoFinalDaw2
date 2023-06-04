@@ -178,7 +178,9 @@
             <label for="mensaje" class="form-label">Mensaje</label>
             <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required></textarea>
           </div>
+          
           <?php
+          
             if (session_status() == PHP_SESSION_NONE) {
               session_start();
             }      
@@ -190,12 +192,14 @@
             {
               echo '<button type="button" class="btn btn-primary" disabled>Inicie sesión para enviar Mensaje</button>';
             }
-          ?>
+            ?>
+
         </form>
       </div>
     </div>
   </div>
 </div>
+
 
 
 
@@ -242,6 +246,32 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUx6bM2Wqb7FnNXlvtnMHEd0MpdsIaRI&callback=initMap" async defer></script>
 
-    
+    <script>
+      document.getElementById("formulario-contacto").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "enviarFormulario.php", true);
+        // No es necesario establecer el encabezado "Content-Type" cuando se envía "multipart/form-data"
+
+        xhr.onload = function() {
+          if (xhr.status === 200) {
+            console.log(xhr.responseText);
+            alert(xhr.responseText);
+            // Restablecer el formulario después de mostrar el mensaje
+            document.getElementById("formulario-contacto").reset();
+          } else {
+            alert("Error al enviar el formulario. Por favor, inténtalo nuevamente.");
+          }
+        };
+
+        var formData = new FormData(this);
+        xhr.send(formData);
+
+        return false;
+      });
+
+    </script>
+
 
     
