@@ -5,9 +5,9 @@ session_start(); // Iniciamos la sesión
 if ($_SERVER['REQUEST_METHOD'] === 'POST') 
 {
   // Conectamos a la base de datos utilizando PDO
-  $dsn = 'mysql:host=localhost;dbname=proyectofinalconcesionario';
-  $usuario = 'carlosseble';
-  $contrasena = 'proyectofinal**1937';
+  $dsn = 'mysql:host=qahz145.techbeff.com;dbname=qahz145';
+  $usuario = 'qahz145';
+  $contrasena = '45Raty11';
   $opciones = array(
       PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
       PDO::ATTR_EMULATE_PREPARES => false

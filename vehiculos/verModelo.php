@@ -13,7 +13,7 @@
     }
 
     // Conexión a la base de datos
-    $db = new PDO('mysql:host=localhost;dbname=proyectofinalconcesionario', 'carlosseble', 'proyectofinal**1937');
+    $db = new PDO('mysql:host=qahz145.techbeff.com;dbname=qahz145', 'qahz145', '45Raty11');
 
     // Preparar la consulta para obtener los detalles del modelo
     $sql = "SELECT * FROM motos WHERE ID_MOTO = :id";
@@ -122,14 +122,14 @@
             <li class="list-group-item"><strong>Precio:</strong> <?php echo $row['PRECIO'] ?>€</li>
             <li class="list-group-item"><strong>Stock:</strong> <?php echo $row['STOCK'] ?></li>
             <li class="list-group-item"><strong>Modelo:</strong> <?php echo $row['MODELO'] ?></li>
-            <li class="list-group-item"><strong>Año:</strong> <?php echo $row['AÑO'] ?></li>
+            <li class="list-group-item"><strong>Año:</strong> <?php echo $row['ANIO'] ?></li>
             <li class="list-group-item"><strong>Potencia:</strong> <?php echo $row['CV'] ?>CV</li>
 
           </ul>
           <form action="carrito.php" method="POST">
             <input type="hidden" name="nombre" value="<?php echo $row['NOMBRE'] ?>">
             <input type="hidden" name="modelo" value="<?php echo $row['MODELO'] ?>">
-            <input type="hidden" name="año" value="<?php echo $row['AÑO'] ?>">
+            <input type="hidden" name="año" value="<?php echo $row['ANIO'] ?>">
             <input type="hidden" name="cv" value="<?php echo $row['CV'] ?>">
             <input type="hidden" name="precio" value="<?php echo $row['PRECIO'] ?>">
             <input type="hidden" name="stock" value="<?php echo $row['STOCK'] ?>">

@@ -5,10 +5,10 @@ if (isset($_GET['id'])) {
     $idMoto = $_GET['id'];
 
     // Realizamos la conexión a la base de datos
-    $servername = "localhost";
-    $username = "carlosseble";
-    $password = "proyectofinal**1937";
-    $dbname = "proyectofinalconcesionario";
+    $servername = "qahz145.techbeff.com";
+    $username = "qahz145";
+    $password = "45Raty11";
+    $dbname = "qahz145";
     
     $conn = new mysqli($servername, $username, $password, $dbname);
 

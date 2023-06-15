@@ -8,10 +8,11 @@ if (!isset($_SESSION['correo']))
 }
 
 // Conexión a la base de datos
-$host = "localhost";
-$user = "carlosseble";
-$password = "proyectofinal**1937";
-$database = "proyectofinalconcesionario";
+$host = "qahz145.techbeff.com";
+$user = "qahz145";
+$password = "45Raty11";
+$database = "qahz145";
+
 $conn = mysqli_connect($host, $user, $password, $database);
 
 // Obtener los datos del usuario

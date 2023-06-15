@@ -71,7 +71,7 @@
       
         // Conexión a la base de datos
 
-        $db = new PDO('mysql:host=localhost;dbname=proyectofinalconcesionario', 'carlosseble', 'proyectofinal**1937');
+        $db = new PDO('mysql:host=qahz145.techbeff.com;dbname=qahz145', 'qahz145', '45Raty11');
 
         // Preparar la consulta para obtener todos los registros
         $sql = "SELECT * FROM motos";
@@ -91,7 +91,7 @@
                   echo "<img src='../imagenes/" . basename($row['IMAGEN']) . "'>";
                   echo "<h2>Marca: " . $row['NOMBRE'] . "</h2>";
                   echo "<h5>Modelo: " . $row['MODELO'] . "</h5>";
-                  echo "<p>Año: " . $row['AÑO'] . "</p>";
+                  echo "<p>Año: " . $row['ANIO'] . "</p>";
                   echo "<p>Caballos: " . $row['CV'] . "</p>";
                   echo "<p>Precio: ". $row['PRECIO'] . "€</p>";
                   echo "<a href='verModelo.php?id=" . $row['ID_MOTO'] . "' class='comprar-btn'>Ver Modelo</a>";
@@ -104,7 +104,7 @@
                   echo "<img src='../imagenes/" . basename($row['IMAGEN']) . "'>";
                   echo "<h2>Marca: " . $row['NOMBRE'] . "</h2>";
                   echo "<h5>Modelo: " . $row['MODELO'] . "</h5>";
-                  echo "<p>Año: " . $row['AÑO'] . "</p>";
+                  echo "<p>Año: " . $row['ANIO'] . "</p>";
                   echo "<p>Caballos: " . $row['CV'] . "</p>";
                   echo "<p>Precio: ". $row['PRECIO'] . "€</p>";
                   echo "<p class='agotado'>Agotado</p>";

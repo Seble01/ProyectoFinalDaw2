@@ -18,10 +18,11 @@ $correo = $_POST['correo'];
 $contrasena = $_POST['contrasena'];
 
 // Conexión a la base de datos
-$host = "localhost";
-$user = "carlosseble";
-$password = "proyectofinal**1937";
-$database = "proyectofinalconcesionario";
+$host = "qahz145.techbeff.com";
+$user = "qahz145";
+$password = "45Raty11";
+$database = "qahz145";
+
 $conn = mysqli_connect($host, $user, $password, $database);
 
 // Actualizar los datos del usuario en la base de datos

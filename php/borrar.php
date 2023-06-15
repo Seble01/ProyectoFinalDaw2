@@ -6,10 +6,10 @@ if(isset($_POST['ID_MOTO']))
   $id = $_POST['ID_MOTO'];
 
   // Realizamos la conexión a la base de datos
-  $servername = "localhost";
-  $username = "carlosseble";
-  $password = "proyectofinal**1937";
-  $dbname = "proyectofinalconcesionario";
+  $servername = "qahz145.techbeff.com";
+  $username = "qahz145";
+  $password = "45Raty11";
+  $dbname = "qahz145";
 
   $conn = new mysqli($servername, $username, $password, $dbname);
 

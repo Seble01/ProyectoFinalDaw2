@@ -116,7 +116,8 @@ button:hover {
   <tbody>
     <?php
     // Realizamos la conexión a la base de datos
-    $conn = new mysqli("localhost", "carlosseble", "proyectofinal**1937", "proyectofinalconcesionario");
+    $conn = new mysqli("qahz145.techbeff.com", "qahz145", "45Raty11", "qahz145");
+
     if ($conn->connect_error) {
       die("Error al conectar con la base de datos: " . $conn->connect_error);
     }
@@ -137,7 +138,7 @@ button:hover {
         echo "<td>" . $row["ID_MOTO"] . "</td>";
         echo "<td>" . $row["NOMBRE"] . "</td>";
         echo "<td>" . $row["MODELO"] . "</td>";
-        echo "<td>" . $row["AÑO"] . "</td>";
+        echo "<td>" . $row["ANIO"] . "</td>";
         echo "<td>" . $row["CV"] . "</td>";
         echo "<td>" . $row["PRECIO"] . "</td>";
         echo "<td>" . $row["STOCK"] . "</td>";
@@ -176,7 +177,7 @@ button:hover {
   <tbody>
     <?php
     // Realizamos la conexión a la base de datos
-    $conn = new mysqli("localhost", "carlosseble", "proyectofinal**1937", "proyectofinalconcesionario");
+    $conn = new mysqli("qahz145.techbeff.com", "qahz145", "45Raty11", "qahz145");
     if ($conn->connect_error) {
       die("Error al conectar con la base de datos: " . $conn->connect_error);
     }
@@ -194,7 +195,7 @@ button:hover {
         echo "<td>" . $row["ID_COCHE"] . "</td>";
         echo "<td>" . $row["NOMBRE"] . "</td>";
         echo "<td>" . $row["MODELO"] . "</td>";
-        echo "<td>" . $row["AÑO"] . "</td>";
+        echo "<td>" . $row["ANIO"] . "</td>";
         echo "<td>" . $row["TIPO_COCHE"] . "</td>";
         echo "<td>" . $row["CV"] . "</td>";
         echo "<td>" . $row["PRECIO"] . "</td>";

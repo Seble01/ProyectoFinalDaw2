@@ -78,23 +78,21 @@
 </style>
 
 <?php
- // Realizamos la conexión a la base de datos
- $conexion = new mysqli("localhost", "carlosseble", "proyectofinal**1937", "proyectofinalconcesionario");
- if ($conexion->connect_error) 
- {
-   die("Error al conectar con la base de datos: " . $conexion->connect_error);
- }
- 
- $consulta = "SELECT * FROM usuarios WHERE TIPO_USU = 'U'";
+
+$conexion = new mysqli("qahz145.techbeff.com", "qahz145", "45Raty11", "qahz145");
+
+if ($conexion->connect_error) {
+    die("Error al conectar con la base de datos: " . $conexion->connect_error);
+}
+
+$consulta = "SELECT * FROM usuarios WHERE TIPO_USU = 'U'";
 $resultado = mysqli_query($conexion, $consulta);
 
-if (mysqli_num_rows($resultado) > 0) 
-{
+if (mysqli_num_rows($resultado) > 0) {
     // Si hay usuarios, mostrarlos en una tabla HTML
     echo '<table>';
-    echo '<tr><th>ID</th><th>Nombre</th><th>Apellidos</th><th>Email</th><th>Tipo de usuario</th><th>Acción</th></tr>';
-    while ($fila = mysqli_fetch_assoc($resultado)) 
-    {
+    echo '<tr><th>ID</th><th>Nombre</th><th>Apellidos</th><th>Email</th><th>Tipo de usuario</th><th>Cambiar Rol</th><th>Eliminar</th><th>Ver Usuario</th></tr>';
+    while ($fila = mysqli_fetch_assoc($resultado)) {
         echo '<tr>';
         echo '<td>' . $fila['ID'] . '</td>';
         echo '<td>' . $fila['NOMBRE'] . '</td>';
@@ -102,16 +100,19 @@ if (mysqli_num_rows($resultado) > 0)
         echo '<td>' . $fila['CORREO'] . '</td>';
         echo '<td>' . $fila['TIPO_USU'] . '</td>';
         echo '<td><button class="cambiar-rol" data-id="' . $fila['ID'] . '">Cambiar Rol</button></td>';
+        echo '<td><button class="borrar-usuario" data-id="' . $fila['ID'] . '">Borrar Usuario</button></td>';
+        echo '<td><a href="verUsuario.php?id=' . $fila['ID'] . '">Ver Usuario</a></td>';
         echo '</tr>';
     }
     echo '</table>';
-} 
-
-else 
-{
+} else {
     echo 'No hay usuarios registrados';
 }
+
 ?>
+
+
+
    
   
       <!-- Footer -->
@@ -126,27 +127,54 @@ else
       <script src="cerrarRestoAdmin.js"></script>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <script>
-            $('.cambiar-rol').click(function() {
-                // Obtener el ID del usuario
-                var id = $(this).data('id');
-                var fila = $(this).parents('tr'); // Obtener la fila correspondiente
+    $(document).ready(function() {
+        $('.cambiar-rol').click(function() {
+            // Obtener el ID del usuario
+            var id = $(this).data('id');
+            var fila = $(this).parents('tr'); // Obtener la fila correspondiente
 
-                // Enviar el ID del usuario a tu archivo PHP
-                $.ajax({
-                    url: 'cambiar_rol.php',
-                    method: 'POST',
-                    data: { id: id },
-                    dataType: 'json', // Especificar que la respuesta es un JSON
-                    success: function(response) {
-                        // Actualizar los datos de la fila correspondiente
-                        fila.find('td:eq(4)').text(response.TIPO_USU);
-                    },
-                    error: function(xhr, status, error) {
-                        // Manejar errores de la petición (opcional)
-                    }
-                });
+            // Enviar el ID del usuario a tu archivo PHP
+            $.ajax({
+                url: 'cambiar_rol.php',
+                method: 'POST',
+                data: {
+                    id: id
+                },
+                dataType: 'json', // Especificar que la respuesta es un JSON
+                success: function(response) {
+                    // Actualizar los datos de la fila correspondiente
+                    fila.find('td:eq(4)').text(response.TIPO_USU);
+                },
+                error: function(xhr, status, error) {
+                    // Manejar errores de la petición (opcional)
+                }
             });
-        </script>
+        });
+
+        $('.borrar-usuario').click(function() {
+            // Obtener el ID del usuario
+            var id = $(this).data('id');
+            var fila = $(this).parents('tr'); // Obtener la fila correspondiente
+
+            // Enviar el ID del usuario a tu archivo PHP
+            $.ajax({
+                url: 'borrar_usuario.php',
+                method: 'POST',
+                data: {
+                    id: id
+                },
+                dataType: 'json', // Especificar que la respuesta es un JSON
+                success: function(response) {
+                    // Eliminar la fila correspondiente
+                    fila.remove();
+                },
+                error: function(xhr, status, error) {
+                    // Manejar errores de la petición (opcional)
+                }
+            });
+        });
+    });
+</script>
 
 </body>
 </html>

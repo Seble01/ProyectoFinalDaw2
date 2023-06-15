@@ -1,9 +1,9 @@
 <?php
 
-$servername = "localhost";
-$username = "carlosseble";
-$password = "proyectofinal**1937";
-$dbname = "proyectofinalconcesionario";
+$servername = "qahz145.techbeff.com";
+$username = "qahz145";
+$password = "45Raty11";
+$dbname = "qahz145";
 
 // Crear la conexión a la base de datos
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -32,7 +32,7 @@ if (isset($_POST['nombre-usuario']) && isset($_POST['apellidos']) && isset($_POS
   }
 
   // Registrar al nuevo usuario en la base de datos
-  $query = "INSERT INTO usuarios (NOMBRE, APELLIDOS, CORREO, PASSWORD, TIPO_USU, ID) VALUES ('$nombre_usuario', '$apellidos', '$correo', '$contrasena', 'U', '')";
+  $query = "INSERT INTO usuarios (NOMBRE, APELLIDOS, CORREO, PASSWORD, TIPO_USU) VALUES ('$nombre_usuario', '$apellidos', '$correo', '$contrasena', 'U')";
   $resultado = mysqli_query($conn, $query);
 
   // Verificar si se ha producido algún error en la ejecución de la consulta

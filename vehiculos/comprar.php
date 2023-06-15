@@ -142,7 +142,7 @@ echo $pdfContent;
 */
 
 // Conexión a la base de datos
-$db = new PDO('mysql:host=localhost;dbname=proyectofinalconcesionario', 'carlosseble', 'proyectofinal**1937');
+$db = new PDO('mysql:host=qahz145.techbeff.com;dbname=qahz145', 'qahz145', '45Raty11');
 
 // Recuperamos los datos del formulario de compra
 $productos = $_SESSION['carrito'];

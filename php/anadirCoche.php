@@ -123,6 +123,7 @@ button:hover {
       <th>Modelo</th>
       <th>Año</th>
       <th>Tipo Combustible</th>
+      <th>Tipo Modelo</th>
       <th>CV</th>
       <th>Precio</th>
       <th>Stock</th>
@@ -133,7 +134,7 @@ button:hover {
   <tbody>
     <?php
     // Realizamos la conexión a la base de datos
-    $conn = new mysqli("localhost", "carlosseble", "proyectofinal**1937", "proyectofinalconcesionario");
+    $conn = new mysqli("qahz145.techbeff.com", "qahz145", "45Raty11", "qahz145");
 
     if ($conn->connect_error) {
       die("Error al conectar con la base de datos: " . $conn->connect_error);
@@ -152,7 +153,7 @@ button:hover {
         echo "<td>" . $row["ID_COCHE"] . "</td>";
         echo "<td>" . $row["NOMBRE"] . "</td>";
         echo "<td>" . $row["MODELO"] . "</td>";
-        echo "<td>" . $row["AÑO"] . "</td>";
+        echo "<td>" . $row["ANIO"] . "</td>";
         echo "<td>" . $row["TIPO_COCHE"] . "</td>";
         echo "<td>" . $row["MODELO_COCHE"] . "</td>";
         echo "<td>" . $row["CV"] . "</td>";
@@ -194,7 +195,8 @@ button:hover {
         <tbody>
             <?php
             // Realizamos la conexión a la base de datos
-            $conn = new mysqli("localhost", "carlosseble", "proyectofinal**1937", "proyectofinalconcesionario");
+            $conn = new mysqli("qahz145.techbeff.com", "qahz145", "45Raty11", "qahz145");
+
             if ($conn->connect_error) {
                 die("Error al conectar con la base de datos: " . $conn->connect_error);
             }
@@ -210,7 +212,7 @@ button:hover {
                      echo "<td>" . $row["ID_MOTO"] . "</td>";
                      echo "<td>" . $row["NOMBRE"] . "</td>";
                      echo "<td>" . $row["MODELO"] . "</td>";
-                     echo "<td>" . $row["AÑO"] . "</td>";
+                     echo "<td>" . $row["ANIO"] . "</td>";
                      echo "<td>" . $row["CV"] . "</td>";
                      echo "<td>" . $row["PRECIO"] . "</td>";
                      echo "<td>" . $row["STOCK"] . "</td>";
@@ -229,50 +231,51 @@ button:hover {
          </tbody>
      </table>
  </div>
-   <div id="opcion-anadir-coche">
-     <!-- formulario para anadir coche -->
- 
-     <form action="agregar_coche.php" id="formulario" method="post" class="formularioInscripcion" enctype="multipart/form-data">
-         <h2>Agregar nuevo Coche</h2>
-         <label for="nombre">Nombre:</label>
-         <input type="text" id="nombre" name="nombre" pattern="[a-zA-Z]{3,20}" title="El nombre debe tener entre 3 y 20 letras" required><br>
- 
-         <label for="modelo">Modelo:</label>
-         <input type="text" id="modelo" name="modelo" pattern="^(?=.*\d)[a-zA-Z\d]{2,20}$" title="El modelo debe tener entre 2 y 20 letras y al menos 1 número" required><br>
- 
-         <label for="combustible">Combustible:</label>
-         <select id="combustible" name="combustible">
-             <option value="G">Gasolina</option>
-             <option value="D">Diésel</option>
-             <option value="E">Eléctrico</option>
-         </select>
- 
-         <label for="tipo_modelo">Tipo de Modelo:</label>
-         <select id="tipo_modelo" name="tipo_modelo">
-             <option value="O">Ocasión</option>
-             <option value="N">Novedades</option>
-             <option value="A">Gama Alta</option>
-         </select>
- 
-         <label for="anio">Año:</label>
-         <input type="text" id="anio" name="anio" pattern="[0-9]+" title="El año debe ser numérico" required><br>
- 
-         <label for="cv">CV:</label>
-         <input type="number" id="cv" name="cv" pattern="[0-9]+" title="La potencia debe ser numérico" required><br>
- 
-         <label for="stock">Stock:</label>
-         <input type="number" id="stock" name="stock" min="1" title="El stock debe ser mayor que 0" required><br>
- 
-         <label for="precio">Precio:</label>
-         <input type="text" id="precio" name="precio" pattern="[0-9]+(\.[0-9]+)?" title="El precio debe ser numérico" required><br>
- 
-         <label for="imagen">Imagen:</label>
-         <input type="file" name="imagen" id="imagen" required>
-         <span id="error-message" class="d-none">La extensión del archivo debe ser gif, png, jpg o jpeg</span>
- 
-         <input type="submit" value="Agregar">
-     </form>
-   </div>
+ <div id="opcion-anadir-coche">
+    <!-- formulario para anadir coche -->
+
+    <form action="agregar_coche.php" id="formulario" method="post" class="formularioInscripcion" enctype="multipart/form-data">
+        <h2>Agregar nuevo Coche</h2>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" pattern="[a-zA-Z]{3,20}" title="El nombre debe tener entre 3 y 20 letras" required><br>
+
+        <label for="modelo">Modelo:</label>
+        <input type="text" id="modelo" name="modelo" pattern="^(?=.*\d)[a-zA-Z\d]{2,20}$" title="El modelo debe tener entre 2 y 20 letras y al menos 1 número" required><br>
+
+        <label for="combustible">Combustible:</label>
+        <select id="combustible" name="combustible">
+            <option value="G">Gasolina</option>
+            <option value="D">Diésel</option>
+            <option value="E">Eléctrico</option>
+        </select>
+
+        <label for="tipo_modelo">Tipo de Modelo:</label>
+        <select id="tipo_modelo" name="tipo_modelo">
+            <option value="O">Ocasión</option>
+            <option value="N">Novedades</option>
+            <option value="A">Gama Alta</option>
+        </select>
+
+        <label for="anio">Año:</label>
+        <input type="text" id="anio" name="anio" pattern="[0-9]+" title="El año debe ser numérico" required><br>
+
+        <label for="cv">CV:</label>
+        <input type="number" id="cv" name="cv" pattern="[0-9]+" title="La potencia debe ser numérico" required><br>
+
+        <label for="stock">Stock:</label>
+        <input type="number" id="stock" name="stock" min="1" title="El stock debe ser mayor que 0" required><br>
+
+        <label for="precio">Precio:</label>
+        <input type="text" id="precio" name="precio" pattern="[0-9]+(\.[0-9]+)?" title="El precio debe ser numérico" required><br>
+
+        <label for="imagen">Imagen:</label>
+        <input type="file" name="imagen" id="imagen" required>
+        <span id="error-message" class="d-none">La extensión del archivo debe ser gif, png, jpg o jpeg</span>
+
+        <input type="submit" value="Agregar">
+    </form>
+</div>
+
  
    <div id="opcion-anadir-moto">
      <!-- formulario para anadir moto -->
@@ -302,12 +305,11 @@ button:hover {
  
          <label for="imagen">Imagen:</label>
          <input type="file" name="imagen" id="imagen" required>
+         <span id="error-message" class="d-none">La extensión del archivo debe ser gif, png, jpg o jpeg</span>
  
-         <button type="submit" id="submit-btn">Agregar</button>
+         <input type="submit" value="Agregar">
    
-         <div class="alert alert-danger d-none" id="error-message" role="alert">
-             El archivo seleccionado no es una imagen válida.
-         </div>
+         
      </form>
    </div>
  </div>
@@ -368,6 +370,41 @@ button:hover {
                      alert("Inserción Correcta");
                      // Actualizar la página sin recargarla
                      $("#coches").load("(vehiculos/coches.php #coches");
+                 }
+             });
+         });
+     });
+ </script>
+
+<script>
+     $(document).ready(function() {
+         $("#formulario").submit(function(event) {
+             // Prevenir que el formulario se envíe de forma tradicional
+             event.preventDefault();
+ 
+             // extensión archivo seleccionado
+             var extension = $('#imagen').val().split('.').pop().toLowerCase();
+ 
+             // verifica si extensión es válida
+             if (jQuery.inArray(extension, ['gif','png','jpg','jpeg']) == -1) {
+                 $('#error-message').removeClass('d-none'); // Quitamos la clase d-none
+                 return false;
+             }
+ 
+             // Recoger los datos del formulario
+             var formData = new FormData(this);
+ 
+             // Enviar la petición AJAX
+             $.ajax({
+                 type: "POST",
+                 url: "agregar_moto.php",
+                 data: formData,
+                 processData: false,
+                 contentType: false,
+                 success: function() {
+                     alert("Inserción Correcta");
+                     // Actualizar la página sin recargarla
+                     $("#motos").load("(vehiculos/motos.php #motos");
                  }
              });
          });
@@ -434,48 +471,7 @@ button:hover {
      }
  
  </script>
- <!--
- <script>
-     function editar(idMoto) {
-         // Obtener referencia al formulario y al título
-         var formulario = document.getElementById("formulario");
-         var titulo = document.getElementById("formulario-titulo");
- 
-         // Cambiar el título del formulario a "Editar Moto"
-         titulo.textContent = "Editar Moto";
- 
-         // Obtener referencia al botón de agregar/editar
-         var botonAgregarEditar = document.getElementById("submit-btn");
- 
-         // Cambiar el texto del botón a "Editar"
-         botonAgregarEditar.textContent = "Editar";
- 
-         // Obtener referencia al input oculto del ID de la moto
-         var idMotoInput = document.getElementById("id-moto-input");
- 
-         // Asignar el ID de la moto al input oculto
-         idMotoInput.value = idMoto;
- 
-         // Realizar una petición al servidor para obtener los datos de la moto seleccionada
-         var xhr = new XMLHttpRequest();
-         xhr.onreadystatechange = function() {
-             if (xhr.readyState === 4 && xhr.status === 200) {
-                 // Convertir la respuesta en un objeto JSON
-                 var moto = JSON.parse(xhr.responseText);
- 
-                 // Llenar los campos del formulario con los valores de la moto
-                 document.getElementById("nombre").value = moto.nombre;
-                 document.getElementById("modelo").value = moto.modelo;
-                 document.getElementById("annio").value = moto.annio;
-                 document.getElementById("cv").value = moto.cv;
-                 document.getElementById("precio").value = moto.precio;
-                 document.getElementById("stock").value = moto.stock;
-             }
-         };
-         xhr.open("GET", "obtener_moto.php?id=" + idMoto, true);
-         xhr.send();
-     }
- </script>
-   -->
+
+
  </body>
  </html>
